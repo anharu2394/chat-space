@@ -21,16 +21,18 @@
 
 ### Association
 - has_many :members
-- belongs_to :user
+- has_many :user_groups
+- has_many :messages
 
 ## usersテーブル
 
 |Column|Type|Options|
-|name|string||
-|email|string||
+|name|string|unique: true|
+|email|string|unique: true|
 
 ### Association
-- has_many :groups
+- has_many :user_groups
+- has_many :groups,through: :user_groups
 - has_many :messages
 - has_many :members
 
