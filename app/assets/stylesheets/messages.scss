@@ -8,18 +8,18 @@ html{
   height:100%;
 }
 .inform-space{
-  background-color:#38AEF0;
+  background-color:$mainBlue;
   &__text{
     text-align: center;
-    color:white;
+    color:$White;
   }
 }
 .left-content{
   float: left;
-  color:#ffffff;
+  color:$White;
   width: 260px;
   min-height:calc(100% - 24px);
-  background-color: #2f3e51;
+  background-color: $left-background;
   padding: 0px 20px;
   &__top{
     position:relative;
@@ -34,12 +34,12 @@ html{
     &__icon-pen{
       position:absolute;
       right:15px;
-      color:white;
+      color:$White;
     }
     &__icon-cog{
       position:absolute;
       right:0;
-      color:white;
+      color:$White;
     }
   }
   &__buttom{
@@ -74,9 +74,9 @@ html{
       font-size:12px;
     }
     &__edit-button{
-      color:#38AEF0;
+      color:$mainBlue;
       position:absolute;
-      border:solid 1px #38AEF0;
+      border:solid 1px $mainBlue;
       right:60px;
       top: 52px;
       padding: 12.5px 20px;
@@ -113,7 +113,7 @@ html{
     .ms-form{
       &__textarea{
         text-indent: 10px;
-        width:calc(100% - 230px);
+        width:calc(100% - 150px);
         height:50px;
         font-size: 16px;
         color: #434A54;
@@ -125,9 +125,9 @@ html{
         height:50px;
         width:100px;
         font-size:16px;
-        background-color: #38AEF0;
+        background-color: $mainBlue;
         border:0;
-        color: white;
+        color: $White;
       }
       .file{
         margin-right: 20px;
