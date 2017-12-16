@@ -1,11 +1,13 @@
-=if flash[:notice]
+-if notice
   .inform-space
     %p.inform-space__text
-      =flash[:notice]
-=if flash[:alert]
-  .inform-space
+      = notice
+
+-if alert
+  .inform-spaces
     %p.inform-space__text
-      =flash[:alert]
+      = alert
+
 #account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
