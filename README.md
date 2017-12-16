@@ -26,6 +26,7 @@
 ## usersテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |name|string|unique: true,null: false|
 |email|string|unique: true,null: false|
 
