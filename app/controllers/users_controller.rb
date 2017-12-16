@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to root_path, notice: '更新できました'
+      flash[:notice] = '更新できました'
     else
 
       render 'edit', alert: '更新できません'
