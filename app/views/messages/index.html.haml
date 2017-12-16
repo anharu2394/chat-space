@@ -1,11 +1,13 @@
--if flash[:notice]
-  .inform-space
-    %p.inform-space__text
-      =flash[:notice]
--if flash[:alert]
-  .inform-space
-    %p.inform-space__text
-      =flash[:alert]
+-if notice
+  .notice-space
+    %p.notice-space__text
+      = notice
+
+-if alert
+  .alert-space
+    %p.alert-space__text
+      = alert
+
 .left-content
   .left-content__top
     %p.left-content__top__user-name user_name
