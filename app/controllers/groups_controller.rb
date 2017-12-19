@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-   before_action :set_group, only: [:update,:edit]
+   before_action :set_group, only: [:update, :edit]
   def index
     @groups = current_user.groups
   end
@@ -32,6 +32,7 @@ class GroupsController < ApplicationController
   def set_group
     @group = Group.find(params[:id])
   end
+
   def group_params
     params.require(:group).permit(:name,  user_ids:
      [] )
