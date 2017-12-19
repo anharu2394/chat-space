@@ -1,13 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    all_groups = Group.all
-    @groups = []
-    all_groups.each do |gr|
-      gr.users.each do |us|
-        @groups << Group.find(gr.id) if us.id == current_user.id
-      end
-    end
-
+    @groups = current_user.groups
   end
   def new
     @group = Group.new
