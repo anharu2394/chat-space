@@ -1,3 +1,12 @@
+-if notice
+  .notice-space
+    %p.notice-space__text
+      = notice
+
+-if alert
+  .alert-space
+    %p.alert-space__text
+      = alert
 .chat-group-form
   %h1 新規チャットグループ
   =form_for @group do |f|{ html: {id: "new_chat_group.new_chat_group"}}

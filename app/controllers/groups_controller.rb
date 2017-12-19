@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path, notice: "グループを登録しました"
     else
-      render :new
+      render :new, alert: "グループを登録できませんでした"
     end
   end
 
