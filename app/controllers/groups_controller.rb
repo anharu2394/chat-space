@@ -14,15 +14,15 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to root_path, notice: '更新できました'
     else
       render :edit, alert: '更新できません'
     end
-  end
-
-  def update
-
   end
 
   private
