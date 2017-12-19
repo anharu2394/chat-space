@@ -17,10 +17,11 @@
     =link_to edit_user_path(current_user), {class: "left-content__top__icon-cog"} do
       %i.fa.fa-cog.left-content__top__icon-cog__i
   .left-content__buttom
-    = @
-    .group
-      %p.group__group-name group_name
-      %p.group__new-message new_message
+    - @groups.each do |gr|
+      .group
+        %p.group__group-name
+          = gr.name
+        %p.group__new-message メッセージはありません
 .right-content
   .right-content-header
     %a.right-content-header__edit-button Edit
