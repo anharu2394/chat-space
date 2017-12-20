@@ -10,10 +10,11 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @groups = current_user.groups
     if @message.save
-      redirect_to root_path, notice: ""
+      redirect_to root_path, notice: "メッセージを送信できました"
     else
-      redirect_to group_messages_path, alert: "メッセージを保存できませんでした"
+      render :index, alert: "メッセージを送信できませんでした"
     end
   end
 
