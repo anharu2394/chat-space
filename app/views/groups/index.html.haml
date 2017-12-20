@@ -18,7 +18,7 @@
       %i.fa.fa-cog.left-content__top__icon-cog__i
   .left-content__buttom
     - @groups.each do |gr|
-      %a.group{href: group_messages_path(gr.id)}
+      = link_to group_messages_path(gr.id),class: "group" do
         %p.group__group-name
           = gr.name
         %p.group__new-message メッセージはありません
