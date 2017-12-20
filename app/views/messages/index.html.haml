@@ -33,10 +33,9 @@
       %p.message__time day_time
       %p.message__text text
   .right-content-send-space
-    %form.ms-form
-      %input.ms-form__textarea{type: "text",placeholder: "type a message" }
+    = form_for @message,url:{action:"create"},html: {class: "ms-form"} do |f|
+      = f.text_field :body, placeholder: "type a message", class: "ms-form__textarea"
       %label.file
         %i.file__icon.fa.fa-picture-o
-        %input.file__image{type: "file"}
-        %button.ms-form__submit{} Send
-
+        = f.file_field :image,class: "file__image"
+        =f.submit "Send",class: "ms-form__submit"
