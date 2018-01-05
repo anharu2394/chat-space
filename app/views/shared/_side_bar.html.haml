@@ -1,0 +1,15 @@
+.left-content
+  .left-content__top
+    %p.left-content__top__user-name
+      = current_user.name
+    =link_to new_group_path, {class: "left-content__top__icon-pen"} do
+      %i.fa.fa-pencil-square-o.left-content__top__icon-pen__i
+    =link_to edit_user_path(current_user), {class: "left-content__top__icon-cog"} do
+      %i.fa.fa-cog.left-content__top__icon-cog__i
+  .left-content__buttom
+    - @groups.each do |gr|
+      = link_to group_messages_path(gr.id),class: "group" do
+        %p.group__group-name
+          = gr.name
+        %p.group__new-message
+          = gr.show_last_message
