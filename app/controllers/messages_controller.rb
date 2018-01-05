@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to root_path, notice: "メッセージを送信できました"
     else
-      render :index, alert: "メッセージを送信できませんでした"
+      render :index, alert: "メッセージを入力してください。"
     end
   end
 
