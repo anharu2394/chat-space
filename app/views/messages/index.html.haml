@@ -8,30 +8,14 @@
     %p.alert-space__text
       = alert
 
-.left-content
-  .left-content__top
-    %p.left-content__top__user-name
-      = current_user.name
-    =link_to new_group_path, {class: "left-content__top__icon-pen"} do
-      %i.fa.fa-pencil-square-o.left-content__top__icon-pen__i
-    =link_to edit_user_path(current_user), {class: "left-content__top__icon-cog"} do
-      %i.fa.fa-cog.left-content__top__icon-cog__i
-  .left-content__buttom
-    - @groups.each do |gr|
-      = link_to group_messages_path(gr.id),class: "group" do
-        %p.group__group-name
-          = gr.name
-        %p.group__new-message メッセージはありません
+= render 'shared/side_bar'
 .right-content
   .right-content-header
     %a.right-content-header__edit-button Edit
     %p.right-content-header__name group_name
     %p.right-content-header__members members
   .right-content__main
-    .message
-      %p.message__user-name user-name
-      %p.message__time day_time
-      %p.message__text text
+    = render @messages
   .right-content-send-space
     = form_for @message,url:{action:"create"},html: {class: "ms-form"} do |f|
       = f.text_field :body, placeholder: "type a message", class: "ms-form__textarea"
