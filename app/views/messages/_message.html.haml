@@ -1,0 +1,9 @@
+.message
+  %p.message__user-name
+    = message.user.name
+  %p.message__time
+    = message.created_at.to_s
+  - if message.body.present?
+    %p.message__text
+      = message.body
+    = image_tag message.image.url, class: 'message__image' if message.image.present?

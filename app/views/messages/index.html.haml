@@ -28,10 +28,7 @@
     %p.right-content-header__name group_name
     %p.right-content-header__members members
   .right-content__main
-    .message
-      %p.message__user-name user-name
-      %p.message__time day_time
-      %p.message__text text
+    = render @messages
   .right-content-send-space
     = form_for @message,url:{action:"create"},html: {class: "ms-form"} do |f|
       = f.text_field :body, placeholder: "type a message", class: "ms-form__textarea"
