@@ -13,7 +13,10 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @groups = current_user.groups
     if @message.save
-      redirect_to root_path, notice: "メッセージを送信できました"
+      respond_to do |format|
+        format.html{redirect_to group_messages_path(@message.group_id), notice: "メッセージを送信できました"}
+        format.json{render json: { name: @message.user.name,created_at: @message.created_at,body: @message.body }}
+      end
     else
       render :index, alert: "メッセージを入力してください。"
     end
