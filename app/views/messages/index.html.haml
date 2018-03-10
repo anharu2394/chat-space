@@ -11,7 +11,7 @@
 = render 'shared/side_bar'
 .right-content
   .right-content-header
-    %a.right-content-header__edit-button Edit
+    %a.right-content-header__edit-button{href:"/groups/#{@group_id}/edit"} Edit
     %p.right-content-header__name group_name
     %p.right-content-header__members members
   .right-content__main

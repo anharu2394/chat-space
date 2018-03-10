@@ -17,7 +17,12 @@ class GroupsController < ApplicationController
   end
 
   def edit
-
+    all_member = User.all
+    @searched_group = all_member.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.json {render json: @searched_group}
+      format.html {}
+    end
   end
 
   def update
